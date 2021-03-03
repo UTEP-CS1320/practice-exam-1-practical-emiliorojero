@@ -12,7 +12,7 @@ int main(void) {
   printf("%ld", x);
 
   int opt;
-  printf("Enter 1 to test P1, 2 to test P2, 3 to test P3: ");
+  printf("Enter 1 to test P1\n 2 to test P2\n 3 to test P3: \n");
   scanf("%d", &opt);
   
   if(opt == 1) {
@@ -22,20 +22,31 @@ int main(void) {
      ***************************/
     
     // TODO: Fix the code below.
-    int x, y;
-    scanf("%d %d", &x, &y);
+    int y;
+    int z;
+    int r1;
+    int r2;
 
-    int x_digit = x / 10;
-    int y_digit = y / 10;
 
-    if(x_digit == y_digit) {
-      print("TRUE");
+  printf("Enter y: \n");
+  scanf("%d", &y);
+
+  printf("Enter z: \n");
+  scanf("%d", &z);
+
+
+    r1 = y%100;
+    r2 = z%100;
+
+    if(r1 == r2) {
+      printf("TRUE");
     }
-
-    print("FALSE");
-    
+    else { 
+      printf("FALSE");
+    }
     /* Problem 1 End */
-  } else if(opt == 2) {
+  }
+   else if(opt == 2) {
     
     /***************************
      *  Problem 2: Lotto
@@ -43,10 +54,51 @@ int main(void) {
     char winner[5] = "7239";
     char ticket[5];
 
+    printf("Enter your ticket number: \n");
     scanf("%s", ticket);
     
     // TODO: Your P2 code goes here
-    
+    if ((ticket[0] == winner[0]) && (ticket[1] == winner[1]) && (ticket[2] == winner[2]) && (ticket[3] == winner[3])) {
+      printf("1st Prize!\n");
+    }
+    else if((ticket[0] == winner[0]) || (ticket[1] == winner[1])) {
+      if ((ticket[0] == winner[0]) && (ticket[2] == winner[2]) && (ticket[3] == winner[3])) {
+        printf("2nd Prize!\n");
+      }
+      else if ((ticket[0] == winner[0]) && (ticket[1] == winner[1]) && (ticket[2] == winner[2])) {
+        printf("2nd Prize!\n");
+      }
+      else if ((ticket[0] == winner[0]) && (ticket[1] == winner[1]) && (ticket[3] == winner[3])) {
+        printf("2nd Prize!\n");
+      }
+      else if ((ticket[1] == winner[1]) && (ticket[2] == winner[2]) && (ticket[3] == winner[3])) {
+        printf("2nd Prize!\n");
+      }
+    }
+    else if ((ticket[0] == winner[0]) || (ticket[1] == winner[1])) {
+      if ((ticket[0] == winner[0]) && (ticket[1] == winner[1])) {
+        printf("3rd Prize!\n");
+      }
+      else if ((ticket[0] == winner[0]) && (ticket[2] == winner[2])) {
+        printf("3rd Prize!\n");
+      }
+      else if ((ticket[0] == winner[0]) && (ticket[3] == winner[3])) {
+        printf("3rd Prize!\n");
+      }
+      else if ((ticket[1] == winner[1]) && (ticket[2] == winner[2])) {
+        printf("3rd Prize!\n");
+      }
+      else if ((ticket[1] == winner[1]) && (ticket[3] == winner[3])) {
+        printf("3rd Prize!\n");
+      }
+      else if ((ticket[2] == winner[2]) && (ticket[3] == winner[3])) {
+        printf("3rd Prize!\n");
+      }
+    } 
+    else {
+      printf("No Prize! Better luck next time!\n");
+    }
+
     /* Problem 2 End */
   } else if(opt == 3) {
     
