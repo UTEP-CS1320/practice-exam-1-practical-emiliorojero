@@ -74,8 +74,7 @@ int main(void) {
       else if ((ticket[1] == winner[1]) && (ticket[2] == winner[2]) && (ticket[3] == winner[3])) {
         printf("2nd Prize!\n");
       }
-    }
-    else if ((ticket[0] == winner[0]) || (ticket[1] == winner[1])) {
+      else if ((ticket[0] == winner[0]) || (ticket[1] == winner[1])) {
       if ((ticket[0] == winner[0]) && (ticket[1] == winner[1])) {
         printf("3rd Prize!\n");
       }
@@ -98,7 +97,7 @@ int main(void) {
     else {
       printf("No Prize! Better luck next time!\n");
     }
-
+    }
     /* Problem 2 End */
   } else if(opt == 3) {
     
